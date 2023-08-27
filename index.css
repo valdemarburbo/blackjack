@@ -17,3 +17,21 @@ h1 {
 #message-el {
     font-style: italic;
 }
+
+.start-btn {
+    width: 200px;
+    color: #016f32;
+    background-color: goldenrod;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.start-btn:hover {
+    color: white;
+    border-right: solid 2px white;
+    border-left: solid 2px white;
+}
