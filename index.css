@@ -18,7 +18,10 @@ h1 {
     font-style: italic;
 }
 
-.start-btn {
+.btn {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
     width: 200px;
     color: #016f32;
     background-color: goldenrod;
@@ -30,7 +33,7 @@ h1 {
     font-weight: bold;
 }
 
-.start-btn:hover {
+.btn:hover {
     color: white;
     border-right: solid 2px white;
     border-left: solid 2px white;
