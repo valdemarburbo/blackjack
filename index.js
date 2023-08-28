@@ -1,5 +1,3 @@
-// let firstCard = getRandomCard();
-// let secondCard = getRandomCard();
 let cards = [];
 let sum = 0;
 
@@ -13,7 +11,7 @@ let cardsEl = document.getElementById("cards-el")
 
 function getRandomCard() {
     let randomCard = Math.floor((Math.random() * 13 + 1));
-    console.log(randomCard)
+
     if (randomCard === 1) {
         return 11
     } else if ( randomCard >= 11) {
@@ -57,10 +55,11 @@ function renderGame() {
 }
 
 function newCard() {
-    console.log("Drawing a new card from the deck!")
-    let nextCard = getRandomCard();
-    sum += nextCard;
-    cards.push(nextCard);
-
-    renderGame();
+    if (isAlive === true && hasBlackJack === false) {
+        let nextCard = getRandomCard();
+        sum += nextCard;
+        cards.push(nextCard);
+    
+        renderGame();
+    }
 }
