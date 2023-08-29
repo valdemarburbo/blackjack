@@ -25,8 +25,7 @@ function getRandomCard() {
         return 11
     } else if (randomCard === 1 && sum > 10) {
         return 1
-    }
-        else if (randomCard >= 11) {
+    } else if (randomCard >= 11) {
         return 10
     } else {
         return randomCard;
@@ -36,9 +35,14 @@ function getRandomCard() {
 function startGame() {
     isAlive = true;
     hasBlackJack = false;
-    
+    sum = 0;
+
     let firstCard = getRandomCard();
     let secondCard = getRandomCard();
+
+    if (firstCard === 11 && secondCard === 11) {
+        firstCard = 1;
+    }
 
     sum = firstCard + secondCard;
     cards = [firstCard, secondCard];
@@ -73,6 +77,14 @@ function newCard() {
         let nextCard = getRandomCard();
         sum += nextCard;
         cards.push(nextCard);
+
+        if (sum > 21) {
+            const index = cards.indexOf(11);
+            if (index > -1) {
+                cards[index] = 1;
+                sum -= 10;
+            }
+        }
     
         renderGame();
     }
