@@ -19,9 +19,14 @@ playerEl.textContent = player.name + ": £" + player.chips
 function getRandomCard() {
     let randomCard = Math.floor((Math.random() * 13 + 1));
 
-    if (randomCard === 1) {
+    console.log(randomCard);
+
+    if (randomCard === 1 && sum < 11) {
         return 11
-    } else if ( randomCard >= 11) {
+    } else if (randomCard === 1 && sum > 10) {
+        return 1
+    }
+        else if (randomCard >= 11) {
         return 10
     } else {
         return randomCard;
@@ -30,6 +35,8 @@ function getRandomCard() {
 
 function startGame() {
     isAlive = true;
+    hasBlackJack = false;
+    
     let firstCard = getRandomCard();
     let secondCard = getRandomCard();
 
